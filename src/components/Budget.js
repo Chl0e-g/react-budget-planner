@@ -41,11 +41,11 @@ const Budget = () => {
       return updatedOutgoingData;
     });
   };
-
+  console.log(outgoingData)
   return (
     <div>
       {incomeDisplay}
-      <OutgoingList outgoingData={outgoingData} />
+      <OutgoingList outgoingData={outgoingData} setOutgoingData={setOutgoingData} />
       <button onClick={addOutgoing}>Add another outgoing</button>
       <p>
         Budget remaining: <BudgetRemaining income={income} />

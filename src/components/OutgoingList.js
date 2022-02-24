@@ -1,9 +1,9 @@
 import Outgoing from "./Outgoing.js";
 
-const OutgoingList = ({outgoingData}) => {
+const OutgoingList = ({outgoingData, setOutgoingData}) => {
   return (
     <ul>
-      <Outgoing outgoingData={outgoingData} />
+      <Outgoing outgoingData={outgoingData} setOutgoingData={setOutgoingData} />
     </ul>
   );
 };
