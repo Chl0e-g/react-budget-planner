@@ -19,7 +19,7 @@ const TotalIncome = ({ income, setIncome, showDecimals }) => {
 
   return (
     <form>
-      <label>
+      <label className="total-label">
         Total monthly income: £
         <input
           type="text"
@@ -27,7 +27,7 @@ const TotalIncome = ({ income, setIncome, showDecimals }) => {
           onChange={changeIncome}
           onBlur={showDecimals}
           value={income.incomeValue}
-          className={`money-input ${income.incomeValid}`}
+          className={`money-input ${income.incomeValid} income-input`}
         ></input>
       </label>
     </form>

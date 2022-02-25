@@ -67,7 +67,7 @@ const Outgoing = ({ outgoingData, setOutgoingData }) => {
                 onChange={changeOutgoingName}
                 index={i}
               ></input>{" "}
-              - £
+              <span className="outgoing-separator">: </span><span>£</span>
               <input
                 type="text"
                 placeholder="0.00"

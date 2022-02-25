@@ -39,11 +39,11 @@ const Budget = () => {
         setOutgoingData={setOutgoingData}
       />
       <button onClick={addOutgoing}>+</button>
-      <p>Budget remaining: </p>
-      <BudgetRemaining
+      <p className="total-label">Budget remaining: <BudgetRemaining
         income={income.incomeValue}
         outgoingData={outgoingData}
-      />
+      /></p>
+      
     </div>
   );
 };

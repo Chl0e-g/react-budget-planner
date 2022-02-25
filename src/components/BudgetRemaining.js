@@ -4,13 +4,13 @@ const BudgetRemaining = ({ income, outgoingData }) => {
     return <span>£</span>;
   }
   outgoingData.forEach((outgoing) => {
-    if (outgoing.removed || isNaN(outgoing.money) === true) {
-      return;
+    if (outgoing.removed || isNaN(outgoing.money)) {
+      return <span>£</span>;
     } else {
       budget -= outgoing.money;
     }
   });
-  return <span>£{budget.toFixed(2)}</span>;
+  return <span className="total-label total-money">£{Number(budget).toFixed(2)}</span>;
 };
 
 export default BudgetRemaining;
