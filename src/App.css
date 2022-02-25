@@ -1,0 +1,107 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #474649;
+}
+
+header {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+div {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+label,
+p,
+form,
+input, span {
+  font-size: 1.3rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+input {
+  width: 60%;
+  border: none;
+  border-bottom: 3px solid transparent;
+  height: 1.3rem;
+  margin: 0px 5px;
+  padding: 8px 0px;
+}
+
+input:focus, input:hover {
+  outline: none;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-image: linear-gradient(90deg, rgba(67,50,218,1) 2%, rgba(192,53,246,1) 98%) 1;
+}
+
+input::placeholder {
+  font-style: italic;
+  color: #adabb5;
+}
+
+.money-input {
+  width: 20%;
+  margin: 30px 5px;
+}
+
+.outgoing-row {
+  border-bottom: 1px solid #ece9f6;
+}
+
+button {
+  border-radius: 50%;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  color: white;
+  background-color: #4332da;
+  margin: 15px 0px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 6px 4px #adabb5;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: 0px 0px 3px 2px #76757c;
+  background-color: #3527b3;
+}
+
+.delete-button {
+  font-size: 0.7rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #adabb5;
+  margin: 5px;
+  vertical-align: super;
+}
+
+.delete-button:hover {
+  box-shadow: 0px 0px 2px 1px #adabb5;
+}
+
+.delete-button:active {
+  box-shadow: 0px 0px 2px 1px #76757c;
+  background-color: #57565a;
+}
+
+.invalid-money, .invalid-money:focus, .invalid-money:hover {
+  color: red;
+  border-image: none;
+  border-bottom: 3px solid red;
+}

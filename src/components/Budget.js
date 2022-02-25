@@ -1,64 +1,51 @@
 import { useState } from "react";
+import TotalIncome from "./TotalIncome.js";
 import OutgoingList from "./OutgoingList.js";
+import BudgetRemaining from "./BudgetRemaining.js";
 
 const Budget = () => {
   const [outgoingData, setOutgoingData] = useState([
-    { name: "Name of outgoing", money: 0.0 },
+    { name: "", money: "", moneyValid: "" },
   ]);
-  const [income, setIncome] = useState("0.00");
+  const [income, setIncome] = useState({ incomeValue: "", incomeValid: "" });
 
-  const changeIncomeDisplay = (e) => {
-    if (!e.target.value) return;
-    const newIncome = e.target.value;
-    const incomePara = <p>Total monthly income: £{newIncome}</p>;
-    setIncomeDisplay(() => {
-      setIncome(() => {
+  const showDecimals = () => {
+    if (!isNaN(income.incomeValue)) {
+      setIncome((currentIncome) => {
+        const newIncome = { ...currentIncome };
+        newIncome.incomeValue = Number(newIncome.incomeValue).toFixed(2);
         return newIncome;
       });
-      return incomePara;
-    });
+    }
   };
-
-  const incomeInputField = (
-    <form>
-      <label>
-        Total monthly income: £
-        <input
-          type="text"
-          placeholder={income}
-          onBlur={changeIncomeDisplay}
-        ></input>
-      </label>
-    </form>
-  );
-
-  const [incomeDisplay, setIncomeDisplay] = useState(incomeInputField);
 
   const addOutgoing = () => {
     setOutgoingData((outgoingData) => {
       const updatedOutgoingData = [...outgoingData];
-      updatedOutgoingData.push({ name: "Name of outgoing", money: 0.0 });
+      updatedOutgoingData.push({ name: "", money: "" });
       return updatedOutgoingData;
     });
   };
-  console.log(outgoingData)
+
   return (
     <div>
-      {incomeDisplay}
-      <OutgoingList outgoingData={outgoingData} setOutgoingData={setOutgoingData} />
-      <button onClick={addOutgoing}>Add another outgoing</button>
-      <p>
-        Budget remaining: <BudgetRemaining income={income} />
-      </p>
+      <TotalIncome
+        income={income}
+        setIncome={setIncome}
+        showDecimals={showDecimals}
+      />
+      <OutgoingList
+        outgoingData={outgoingData}
+        setOutgoingData={setOutgoingData}
+      />
+      <button onClick={addOutgoing}>+</button>
+      <p>Budget remaining: </p>
+      <BudgetRemaining
+        income={income.incomeValue}
+        outgoingData={outgoingData}
+      />
     </div>
   );
-};
-
-const BudgetRemaining = ({ income }) => {
-  if (income > 0) {
-    return <span>£{income}</span>;
-  }
-  return null;
 };
 
 export default Budget;

@@ -2,7 +2,7 @@ const Header = () => {
   return (
     <header>
       <h1>Budget planner</h1>
-      <p>Plan your personal monthly finances</p>
+      <p>Plan your monthly finances</p>
     </header>
   );
 };
