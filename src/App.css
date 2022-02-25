@@ -12,7 +12,7 @@
 
 header {
   text-align: center;
-  margin: 40px 0px;
+  margin: 40px 5px 30px 5px;
 }
 
 div {
@@ -57,7 +57,7 @@ input {
 
 .money-input {
   width: 20%;
-  margin: 30px 5px;
+  margin: 20px 5px;
   color: #474649;
 }
 
@@ -119,7 +119,8 @@ button:active {
 }
 
 .delete-button:hover {
-  box-shadow: 0px 0px 2px 1px #adabb5;
+  box-shadow: 0px 0px 2px 1px #b8b5c0;
+  background-color: #9997a1;
 }
 
 .total-money {
@@ -130,7 +131,7 @@ button:active {
 }
 
 .delete-button:active {
-  box-shadow: 0px 0px 2px 1px #76757c;
+  box-shadow: 0px 0px 2px 1px #9b9aa1;
   background-color: #57565a;
 }
 
